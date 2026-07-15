@@ -142,9 +142,9 @@ ul { list-style: none; padding: 0; }
 .dropdown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem 1.5rem; }
 .dropdown-item { display: block; padding: .625rem .75rem; border-radius: .625rem; transition: background .15s; }
 .dropdown-item:hover { background: var(--gray-50); }
-.dropdown-item .di-title { font-size: .8125rem; font-weight: 600; color: var(--gray-900); }
+.dropdown-item .di-title { display: block; font-size: .8125rem; font-weight: 600; color: var(--gray-900); }
 .dropdown-item:hover .di-title { color: var(--teal); }
-.dropdown-item .di-desc { font-size: .75rem; color: var(--gray-500); margin-top: .125rem; }
+.dropdown-item .di-desc { display: block; font-size: .75rem; color: var(--gray-500); margin-top: .125rem; line-height: 1.35; }
 .dropdown-panel.simple { width: 220px; padding: .625rem; }
 .dropdown-panel.simple .di-label {
   display: block; padding: .625rem .75rem; border-radius: .5rem;
@@ -421,6 +421,41 @@ ul { list-style: none; padding: 0; }
 
 /* Active nav state */
 .nav-link.active, .dropdown-toggle.active { color: var(--gray-900); }
+
+/* ==========================================================================
+   Case studies
+   ========================================================================== */
+.cs-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .75rem; }
+.cs-tag { font-size: .7rem; font-weight: 500; padding: .25rem .625rem; border-radius: 9999px; background: var(--gray-100); color: var(--gray-600); }
+.hero-dark .cs-tag { background: rgba(255,255,255,.08); color: #fff; }
+
+/* Filter chips (visual) */
+.tab-chip { padding: .5rem 1rem; border-radius: 9999px; font-size: .8125rem; font-weight: 500; background: var(--gray-100); color: var(--gray-600); transition: all .2s; }
+.tab-chip:hover { background: var(--gray-200); }
+.tab-chip.active { background: var(--teal); color: #fff; }
+
+/* Listing card tweaks */
+.cs-card .cs-logo { display: flex; align-items: center; justify-content: center; padding: 2rem; background: #fff; }
+.cs-card .cs-logo img { max-height: 100%; width: auto; object-fit: contain; }
+.cs-card-title { font-size: 1.05rem; font-weight: 600; color: var(--gray-900); line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.cs-card:hover .cs-card-title { color: var(--teal); }
+.cs-metrics { margin-top: 1rem; display: flex; gap: 1.5rem; }
+.cs-metric-v { font-size: 1.5rem; font-weight: 700; color: var(--teal); }
+.cs-metric-l { font-size: .72rem; color: var(--gray-500); margin-top: .1rem; }
+
+/* Detail: intro lead + challenge/solution/results panels */
+.cs-lead { max-width: 56rem; font-size: 1.15rem; line-height: 1.7; color: var(--gray-700); margin-bottom: 3rem; }
+.cs-panels { display: grid; gap: 1.5rem; }
+@media (min-width: 900px) { .cs-panels { grid-template-columns: repeat(3, 1fr); } }
+.cs-panel { background: #fff; border: 1px solid var(--gray-200); border-radius: 1rem; padding: 1.75rem; }
+.cs-panel-label { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1rem; }
+.cs-panel-body ul { list-style: none; padding: 0; margin: 0; }
+.cs-panel-body li { position: relative; padding-left: 1.25rem; margin-bottom: .75rem; font-size: .9rem; line-height: 1.55; color: var(--gray-600); }
+.cs-panel-body li::before { content: ''; position: absolute; left: 0; top: .5rem; width: .4rem; height: .4rem; border-radius: 9999px; background: currentColor; opacity: .4; }
+.cs-panel-body p { font-size: .9rem; color: var(--gray-600); line-height: 1.55; margin-bottom: .5rem; }
+.cs-about { max-width: 56rem; margin-inline: auto; }
+.cs-about .prose ul { list-style: none; padding: 0; }
+.cs-about .prose li { padding-left: 0; color: var(--gray-500); font-size: .9rem; margin-bottom: .25rem; }
 
 /* ---------- Animations ---------- */
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
